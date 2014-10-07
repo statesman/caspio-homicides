@@ -1,0 +1,9 @@
+table {border: none; width:100%; margin-bottom: inherit;}
+table tr td {padding: 0;}
+input[type="text"] {height:inherit !important}
+.detailmug {margin-top:20px}
+.DC-paginator {height:  25px !important}
+st.Button .stButton_gradient, .stButton .stButton_gradient, .stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices {height: 23px !important}
+form#caspioform p {font-size: 0.875rem !important;line-height: 1.125rem !important;}
+.cmFooterTerms p {font-size: 12px;}
+#map-canvas img {max-width: inherit;}
