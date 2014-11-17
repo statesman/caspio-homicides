@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-<?php session_start(); ?>
+<?php if(session_id() == '' || !isset($_SESSION)) { 
+   // session isn't started 
+   session_start(); 
+} ?>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +82,7 @@
         <h3>Where the case stands</h3>
         <!--  case summary -->
         <!-- Begin Caspio Deploy Code (for inserting in body) -->
-        <?php require_once('../caspio/dpload.txt');dpload('http://bridge.caspio.net/','e76c00009e080aa266704e5d8702','i');?>
+        <?php require_once('dpload.txt');dpload('http://bridge.caspio.net/','e76c00009e080aa266704e5d8702','i');?>
         <!-- End Caspio Deploy Code -->
         
         <h3>Suspected in the death of:</h3>

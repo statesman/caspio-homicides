@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-<?php session_start(); ?>
+<?php if(session_id() == '' || !isset($_SESSION)) { 
+   // session isn't started 
+   session_start(); 
+} ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +83,7 @@ var addToHomeConfig = {
      <p>Click on a photo or name to explore more about each victim.</p>
       <div class="show-for-medium-up">	
 	<!-- Begin Caspio Deploy Code (for inserting in body) -->
-<?php require_once('../caspio/dpload.txt');dpload('http://bridge.caspio.net/','e76c0000029614b9e9a745778a4e','i');?>
+<?php require_once('dpload.txt');dpload('http://bridge.caspio.net/','e76c0000029614b9e9a745778a4e','i');?>
 	<!-- End Caspio Deploy Code -->
       </div>
       <div class="show-for-small-only">
