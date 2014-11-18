@@ -110,38 +110,7 @@
 <div class="row">
 	<div class="large-6 medium-6 columns">
     	<!-- feed -->
-<!--
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-if (RSS_feed != "") {
-    google.load("feeds", "1");
-    function initialize() {
-      var feed = new google.feeds.Feed(RSS_feed);
-	  feed.setNumEntries(10);
-      feed.load(function(result) {
-        if (!result.error) {
-          var container = document.getElementById("feed");
-          for (var i = 0; i < result.feed.entries.length; i++) {
-			var entry = result.feed.entries[i];
-			var li = document.createElement("li");
-			li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
-			container.appendChild(li);
-          }
-        }
-      });
-    }
-    google.setOnLoadCallback(initialize);
-}
-
-if (RSS_feed != "") {
-document.write("<h4>More on " + suspectName + "<\/h4>");
-document.write("<div id=\"medleycontent\">");
-document.write("	<ul id=\"feed\">");
-document.write("	<\/ul>");
-document.write("<\/div>");
-}
-</script>
--->
+      <div id="headlines"></div>
     </div>
 
 	<div class="large-6 medium-6 columns">
@@ -197,15 +166,39 @@ document.write("");
    output = "<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">"; 
  } 
  $('#Mug').html(output); 
-</script>
 
-<script type="text/javascript"> 
+
 var mapOutput;
   if (Latitude != "") {
     mapOutput = "<span class=\"show-for-small-only\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=400x250&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span><span class=\"show-for-medium-up\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=300x200&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span>";
    $('#Map').html(mapOutput);
  }
+
+
+  var myURL = "http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22";
+
+// http://search.cmgdigital.com/v2/?count=5&f=item_class:"https://cv.cmgdigital.com/item_class/composite/news.medleystory/" AND originating_site:"https://cv.cmgdigital.com/provider/medleysite/prod/4000/" AND premium:"free" AND topics:"Phillip Ford Terrell"
+
+  $.getJSON("json/homicide-headlines-topic.json",buildOutput);
+
+  function buildOutput(data) {
+        // INIT
+        var output = '<h3>Recent coverage<h3><ul>';
+        
+        // LOOP THROUGH FEED ITEMS
+        for(var i=0;i<data.entities.length;i++) {
+            output += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
+            output += data.entities[i].headline;
+            output += '</a></li>';
+        }
+        output += '</ul>';
+        
+        $('#headlines').html(output);
+  }
+
 </script>
+
+
 
 
 

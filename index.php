@@ -97,39 +97,11 @@ var addToHomeConfig = {
 	<div class="large-4 medium-4 columns">
     	<h3>About this project</h3>
     	<p>The Austin Homicide Project is an effort by the Austin American-Statesman to document homicides in the City of Austin and Central Texas, and to provide a database of information about the cases so that the community can stay informed. This database is currently tracking homicides since Jan. 1, 2013, including justifiable homicides and cases classified as murders by the Austin Police Department. The project will expand to include other jurisdictions.</p>
-        <!-- feed -->
-<!--
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-        var RSS_feed = "http://www.statesman.com/list/rss/news/crime-law/austin-homicide-project-recent-coverage/aKbD/"
-            google.load("feeds", "1");
-            function initialize() {
-              var feed = new google.feeds.Feed(RSS_feed);
-            feed.setNumEntries(20);
-              feed.load(function(result) {
-                if (!result.error) {
-                  var container = document.getElementById("feed");
-                  for (var i = 0; i < result.feed.entries.length; i++) {
-              var entry = result.feed.entries[i];
-              var li = document.createElement("li");
-              li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
-              container.appendChild(li);
-                  }
-                }
-              });
-            }
-            google.setOnLoadCallback(initialize);
-        
-        document.write("<h4>Recent stories from the Austin Homicide Project<\/h4>");
-        document.write("<div id=\"medleycontent\">");
-        document.write("  <ul id=\"feed\">");
-        document.write("  <\/ul>");
-        document.write("<\/div>");
-        </script>
--->
-    <div id="headlines"></div>
-        <!-- end feed -->
-  	</div>
+
+      <!-- feed -->
+      <div id="headlines"></div>
+
+      </div>
 </div>
 
 <hr>
@@ -151,13 +123,11 @@ var addToHomeConfig = {
 <script type="text/javascript">
   var myURL = "http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22";
 
-  $.getJSON(myURL,buildOutput);
-
-// http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22
+  $.getJSON("json/homicide-headlines.json",buildOutput);
 
   function buildOutput(data) {
         // INIT
-        var output = '<ul>';
+        var output = '<h3>Recent coverage<h3><ul>';
         
         // LOOP THROUGH FEED ITEMS
         for(var i=0;i<data.entities.length;i++) {
