@@ -127,6 +127,7 @@ var addToHomeConfig = {
         document.write("<\/div>");
         </script>
 -->
+    <div id="headlines"></div>
         <!-- end feed -->
   	</div>
 </div>
@@ -138,14 +139,37 @@ var addToHomeConfig = {
 
 <!-- Ad Code -->   
 <?php include "advertising.php"; ?>
-<!-- End Ad Code -->
 
- 
-          <script src="../foundation/js/vendor/jquery.js"></script>
-          <script src="../foundation/js/foundation.min.js"></script>
-          <script>
-            $(document).foundation();
-          </script>
+<!-- foundation --> 
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+<!-- project scripts -->
+<script type="text/javascript">
+  var myURL = "http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22";
+
+  $.getJSON(myURL,buildOutput);
+
+// http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22
+
+  function buildOutput(data) {
+        // INIT
+        var output = '<ul>';
+        
+        // LOOP THROUGH FEED ITEMS
+        for(var i=0;i<data.entities.length;i++) {
+            output += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
+            output += data.entities[i].headline;
+            output += '</a></li>';
+        }
+        output += '</ul>';
+        
+        $('#headlines').html(output);
+  }
+</script>
 
 <?php include "metrics-homicides.js";?>
 <?php include "../common/metrics.js";?>
