@@ -79,40 +79,11 @@
     <!-- End Caspio Deploy Code -->
 
 		<!-- map -->
-		<style type="text/css">
-        #map-canvas {width: 100%;height: 200px; margin-bottom: 10px;}
-        </style>
-        <script type="text/javascript">
-            if (Latitude != "" && Longitude != "") {
-                document.write("<br \/><div id=\"map-canvas\"><\/div>");
-            }
-        </script>    
-	
-    <!-- map js -->
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo&sensor=false">
-    </script>
-    <script type="text/javascript">
-        function initialize() {
-          var myLatlng = new google.maps.LatLng(Latitude,Longitude);
-          var mapOptions = {
-            zoom: 15,
-            center: myLatlng,
-            panControl: false,
-            scaleControl: false,
-            zoomControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-          var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: Location
-          });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script></div>
+    <div id="Map"></div>
+  </div>
+
+
+
 
 	<div class="large-4 medium-4 columns">
         <!-- suspects -->
@@ -215,7 +186,7 @@
   </script>
 
   <!-- project scripts -->
-  <script type="text/javascript"> 
+<script type="text/javascript"> 
  var output; 
  if (victimPhoto_url != "") { 
    output = "<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + victimPhoto_url + "\" width=\"300\" height=\"300\" alt=\"" + victimName + "\" \/>"; 
@@ -225,6 +196,15 @@
  } 
  $('#Mug').html(output); 
 </script>
+
+<script type="text/javascript"> 
+var mapOutput;
+  if (Latitude != "") {
+    mapOutput = "<span class=\"show-for-small-only\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=400x250&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span><span class=\"show-for-medium-up\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=300x200&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span>";
+   $('#Map').html(mapOutput);
+ }
+</script>
+
 
 
 <?php include "metrics-homicides.js";?>

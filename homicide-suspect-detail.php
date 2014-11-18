@@ -103,32 +103,7 @@
         <div id="cxkg"><a href="http://bridge.caspio.net/dp.asp?AppKey=e76c0000ea633f50424c4c78a0b1">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
 
         <!-- map -->
-        <script type="text/javascript">
-            if (Latitude != "" && Longitude != "") {
-			document.write("<div style=\"width:100%;height:200px\" id=\"map-canvas\"><\/div>");
-            }
-        </script>
-        <!-- map js -->   
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo&sensor=false">
-        </script>
-        <script type="text/javascript">
-            function initialize() {
-              var myLatlng = new google.maps.LatLng(Latitude,Longitude);
-              var mapOptions = {
-                zoom: 15,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-              }
-              var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-              var marker = new google.maps.Marker({
-                  position: myLatlng,
-                  map: map,
-                  title: Location
-              });
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
+    <div id="Map"></div>
 	</div>
 </div>
 <hr>    
@@ -223,6 +198,15 @@ document.write("");
  } 
  $('#Mug').html(output); 
 </script>
+
+<script type="text/javascript"> 
+var mapOutput;
+  if (Latitude != "") {
+    mapOutput = "<span class=\"show-for-small-only\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=400x250&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span><span class=\"show-for-medium-up\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=300x200&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span>";
+   $('#Map').html(mapOutput);
+ }
+</script>
+
 
 
 <?php include "../common/footer.php"; ?>
