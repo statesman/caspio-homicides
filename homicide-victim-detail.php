@@ -68,14 +68,7 @@
         </div>
 	
             <!-- photo -->
-           <script type="text/javascript">
-            if (victimPhoto_url != "") {
-			document.write("<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + victimPhoto_url + "\"  width=\"300\" height=\"300\" alt=\"" + victimName + "\" \/>");
-            }
-			else {
-      document.write("<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">");
-		}
-            </script>
+            <div id="Mug"></div>
 	</div>
     
 	<div class="large-4 medium-4 columns"> 
@@ -220,6 +213,19 @@
   <script>
     $(document).foundation();
   </script>
+
+  <!-- project scripts -->
+  <script type="text/javascript"> 
+ var output; 
+ if (victimPhoto_url != "") { 
+   output = "<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + victimPhoto_url + "\" width=\"300\" height=\"300\" alt=\"" + victimName + "\" \/>"; 
+ } 
+ else { 
+   output = "<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">"; 
+ } 
+ $('#Mug').html(output); 
+</script>
+
 
 <?php include "metrics-homicides.js";?>
 <?php include "../common/metrics.js";?>

@@ -67,15 +67,7 @@
 		<div id="cxkg"><a href="http://bridge.caspio.net/dp.asp?AppKey=e76c0000517ef95e22cf4371b277">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
 	
 		<!-- photo -->
-		<script type="text/javascript">
-            if (suspectPhoto_url != "") {
-			document.write("<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + suspectPhoto_url + "\"  width=\"300\" height=\"300\" alt=\" + suspectName + \" \/>");
-            }
-			else {
-			document.write("<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">");
-		}
-		</script>
-	</div>
+  <div id="Mug"></div>	</div>
     
 	<div class="large-5 medium-5 columns">
 
@@ -219,6 +211,19 @@ document.write("");
   <script>
     $(document).foundation();
   </script>
+
+<!-- project script -->
+<script type="text/javascript"> 
+ var output; 
+ if (suspectPhoto_url != "") { 
+   output = "<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + suspectPhoto_url + "\" width=\"300\" height=\"300\" alt=\"" + suspectName + "\" \/>"; 
+ } 
+ else { 
+   output = "<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">"; 
+ } 
+ $('#Mug').html(output); 
+</script>
+
 
 <?php include "../common/footer.php"; ?>
 
