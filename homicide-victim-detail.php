@@ -170,7 +170,7 @@
 
 
 <!-- Share Code -->   
-<?php include "../common/share.php"; ?>
+<?php include "share.php"; ?>
 
 <!-- ad Code -->   
 <?php include "advertising.php"; ?>

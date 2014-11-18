@@ -134,7 +134,7 @@ var addToHomeConfig = {
 <hr>
 
 <!-- Share Code -->   
-<?php include "../common/share.php"; ?>
+<?php include "share.php"; ?>
 
 <!-- Ad Code -->   
 <?php include "advertising.php"; ?>
