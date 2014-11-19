@@ -109,6 +109,7 @@
 <hr>    
 <div class="row">
 	<div class="large-6 medium-6 columns">
+
     	<!-- feed -->
       <div id="headlines"></div>
     </div>
@@ -141,6 +142,8 @@ document.write("");
 	</div>
 </div>
 
+
+
 <hr />
 
 <!-- Share Code -->   
@@ -157,7 +160,10 @@ document.write("");
   </script>
 
 <!-- project script -->
+
 <script type="text/javascript"> 
+
+//BUILD THE MUG PULLING VARS FROM CASPIO
  var output; 
  if (suspectPhoto_url != "") { 
    output = "<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + suspectPhoto_url + "\" width=\"300\" height=\"300\" alt=\"" + suspectName + "\" \/>"; 
@@ -168,38 +174,39 @@ document.write("");
  $('#Mug').html(output); 
 
 
+// GET STATIC MAP PULLING LAT/LONG FROM CASPIO
 var mapOutput;
   if (Latitude != "") {
     mapOutput = "<span class=\"show-for-small-only\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=400x250&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span><span class=\"show-for-medium-up\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=300x200&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span>";
    $('#Map').html(mapOutput);
  }
 
+  //FEED TO HEADLINES FROM MELVIL USING NAME FROM CASPIO
+  var myURL = "json/getjson.php?count=5&topic=" + encodeURIComponent(suspectName);
 
-  var myURL = "http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22";
+  $.getJSON(myURL,buildOutput);
 
-// http://search.cmgdigital.com/v2/?count=5&f=item_class:"https://cv.cmgdigital.com/item_class/composite/news.medleystory/" AND originating_site:"https://cv.cmgdigital.com/provider/medleysite/prod/4000/" AND premium:"free" AND topics:"Phillip Ford Terrell"
-
-  $.getJSON("json/homicide-headlines-topic.json",buildOutput);
+  var feedOutput = '';
 
   function buildOutput(data) {
+        // TEST IF WORTH DOING
+        if (data.entities.length === 0) {
+          return;
+        }
         // INIT
-        var output = '<h3>Recent coverage<h3><ul>';
+        feedOutput = '<h3>Recent coverage<h3><ul>';
         
         // LOOP THROUGH FEED ITEMS
         for(var i=0;i<data.entities.length;i++) {
-            output += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
-            output += data.entities[i].headline;
-            output += '</a></li>';
+            feedOutput += '<li><a href="http://'+data.entities[i].canonical_url+'" target="_blank">';
+            feedOutput += data.entities[i].headline;
+            feedOutput += '</a></li>';
         }
-        output += '</ul>';
-        
-        $('#headlines').html(output);
+        feedOutput += '</ul>';
+        $('#headlines').html(feedOutput);
   }
 
 </script>
-
-
-
 
 
 <?php include "../common/footer.php"; ?>

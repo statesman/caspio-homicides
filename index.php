@@ -120,25 +120,32 @@ var addToHomeConfig = {
     </script>
 
 <!-- project scripts -->
-<script type="text/javascript">
-  var myURL = "http://search.cmgdigital.com/v2/?format=json&count=5&f=item_class:%22https://cv.cmgdigital.com/item_class/composite/news.medleystory/%22%20AND%20originating_site:%22https://cv.cmgdigital.com/provider/medleysite/prod/4000/%22%20AND%20premium:%22free%22%20AND%20topics:%22homicides%22";
 
-  $.getJSON("json/homicide-headlines.json",buildOutput);
+<script type="text/javascript">
+  var myURL = "json/getjson.php?count=20&topic=" + encodeURIComponent('homicides');
+
+  $.getJSON(myURL,buildOutput);
+
+  var feedOutput = '';
 
   function buildOutput(data) {
+        // TEST IF WORTH DOING
+        if (data.entities.length === 0) {
+          return;
+        }
         // INIT
-        var output = '<h3>Recent coverage<h3><ul>';
+        feedOutput = '<h3>Recent coverage<h3><ul>';
         
         // LOOP THROUGH FEED ITEMS
         for(var i=0;i<data.entities.length;i++) {
-            output += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
-            output += data.entities[i].headline;
-            output += '</a></li>';
+            feedOutput += '<li><a href="http://'+data.entities[i].canonical_url+'" target="_blank">';
+            feedOutput += data.entities[i].headline;
+            feedOutput += '</a></li>';
         }
-        output += '</ul>';
-        
-        $('#headlines').html(output);
+        feedOutput += '</ul>';
+        $('#headlines').html(feedOutput);
   }
+
 </script>
 
 <?php include "metrics-homicides.js";?>
