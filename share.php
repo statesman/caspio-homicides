@@ -13,4 +13,4 @@
 <!-- AddThis Button END -->
     </div>
 </div>
-<hr>  
+<hr class="show-for-small-only">  

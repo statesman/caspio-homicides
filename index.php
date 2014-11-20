@@ -138,7 +138,7 @@ var addToHomeConfig = {
         
         // LOOP THROUGH FEED ITEMS
         for(var i=0;i<data.entities.length;i++) {
-            feedOutput += '<li><a href="http://'+data.entities[i].canonical_url+'" target="_blank">';
+            feedOutput += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
             feedOutput += data.entities[i].headline;
             feedOutput += '</a></li>';
         }
