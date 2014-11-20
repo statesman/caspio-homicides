@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-<?php session_start(); ?>
+<?php if(session_id() == '' || !isset($_SESSION)) { 
+   // session isn't started 
+   session_start(); 
+} ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +61,6 @@ var addToHomeConfig = {
                 <li class="active"><a href="./">HOME</a></li>
                 <li><a href="homicide-victim-list.php">VICTIMS</a></li>
 				        <li><a href="homicide-suspect-list.php">SUSPECTS</a></li>
-                <li><a href="homicide-charts.php">STATISTICS</a></li>
                 <li><a href="homicide-map.php">MAP</a></li>
                 <li><a href="homicide-faq.php">ABOUT</a></li>
 			</ul>
@@ -80,7 +82,7 @@ var addToHomeConfig = {
      <p>Click on a photo or name to explore more about each victim.</p>
       <div class="show-for-medium-up">	
 	<!-- Begin Caspio Deploy Code (for inserting in body) -->
-<?php require_once('../caspio/dpload.txt');dpload('http://bridge.caspio.net/','e76c0000029614b9e9a745778a4e','i');?>
+<?php require_once('dpload.txt');dpload('http://bridge.caspio.net/','e76c0000029614b9e9a745778a4e','i');?>
 	<!-- End Caspio Deploy Code -->
       </div>
       <div class="show-for-small-only">
@@ -94,55 +96,56 @@ var addToHomeConfig = {
 	<div class="large-4 medium-4 columns">
     	<h3>About this project</h3>
     	<p>The Austin Homicide Project is an effort by the Austin American-Statesman to document homicides in the City of Austin and Central Texas, and to provide a database of information about the cases so that the community can stay informed. This database is currently tracking homicides since Jan. 1, 2013, including justifiable homicides and cases classified as murders by the Austin Police Department. The project will expand to include other jurisdictions.</p>
-        <!-- feed -->
-<!--
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-        var RSS_feed = "http://www.statesman.com/list/rss/news/crime-law/austin-homicide-project-recent-coverage/aKbD/"
-            google.load("feeds", "1");
-            function initialize() {
-              var feed = new google.feeds.Feed(RSS_feed);
-            feed.setNumEntries(20);
-              feed.load(function(result) {
-                if (!result.error) {
-                  var container = document.getElementById("feed");
-                  for (var i = 0; i < result.feed.entries.length; i++) {
-              var entry = result.feed.entries[i];
-              var li = document.createElement("li");
-              li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
-              container.appendChild(li);
-                  }
-                }
-              });
-            }
-            google.setOnLoadCallback(initialize);
-        
-        document.write("<h4>Recent stories from the Austin Homicide Project<\/h4>");
-        document.write("<div id=\"medleycontent\">");
-        document.write("  <ul id=\"feed\">");
-        document.write("  <\/ul>");
-        document.write("<\/div>");
-        </script>
--->
-        <!-- end feed -->
-  	</div>
+
+      <!-- feed -->
+      <div id="headlines"></div>
+
+      </div>
 </div>
 
 <hr>
 
 <!-- Share Code -->   
-<?php include "../common/share.php"; ?>
+<?php include "share.php"; ?>
 
 <!-- Ad Code -->   
 <?php include "advertising.php"; ?>
-<!-- End Ad Code -->
 
- 
-          <script src="../foundation/js/vendor/jquery.js"></script>
-          <script src="../foundation/js/foundation.min.js"></script>
-          <script>
-            $(document).foundation();
-          </script>
+<!-- foundation --> 
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+<!-- project scripts -->
+
+<script type="text/javascript">
+  var myURL = "json/getjson.php?count=20&topic=" + encodeURIComponent('homicides');
+
+  $.getJSON(myURL,buildOutput);
+
+  var feedOutput = '';
+
+  function buildOutput(data) {
+        // TEST IF WORTH DOING
+        if (data.entities.length === 0) {
+          return;
+        }
+        // INIT
+        feedOutput = '<h3>Recent coverage<h3><ul>';
+        
+        // LOOP THROUGH FEED ITEMS
+        for(var i=0;i<data.entities.length;i++) {
+            feedOutput += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
+            feedOutput += data.entities[i].headline;
+            feedOutput += '</a></li>';
+        }
+        feedOutput += '</ul>';
+        $('#headlines').html(feedOutput);
+  }
+
+</script>
 
 <?php include "metrics-homicides.js";?>
 <?php include "../common/metrics.js";?>

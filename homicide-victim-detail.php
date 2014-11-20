@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-<?php session_start(); ?>
+<?php if(session_id() == '' || !isset($_SESSION)) { 
+   // session isn't started 
+   session_start(); 
+} ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +43,6 @@
                 <li><a href="./">HOME</a></li>
                 <li class="active"><a href="homicide-victim-list.php">VICTIMS</a></li>
 			         	<li><a href="homicide-suspect-list.php">SUSPECTS</a></li>
-                <li><a href="homicide-charts.php">STATISTICS</a></li>
                 <li><a href="homicide-map.php">MAP</a></li>
                 <li><a href="homicide-faq.php">ABOUT</a></li>
 			</ul>
@@ -65,58 +67,22 @@
         </div>
 	
             <!-- photo -->
-           <script type="text/javascript">
-            if (victimPhoto_url != "") {
-			document.write("<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + victimPhoto_url + "\"  width=\"300\" height=\"300\" alt=\"" + victimName + "\" \/>");
-            }
-			else {
-      document.write("<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">");
-		}
-            </script>
+            <div id="Mug"></div>
 	</div>
     
 	<div class="large-4 medium-4 columns"> 
    		
     <!-- incident detail -->
     <!-- Begin Caspio Deploy Code (for inserting in body) -->
-    <?php require_once('../caspio/dpload.txt');dpload('http://bridge.caspio.net/','e76c0000f05b1372a6914d879882','i');?>
+    <?php require_once('dpload.txt');dpload('http://bridge.caspio.net/','e76c0000f05b1372a6914d879882','i');?>
     <!-- End Caspio Deploy Code -->
 
 		<!-- map -->
-		<style type="text/css">
-        #map-canvas {width: 100%;height: 200px; margin-bottom: 10px;}
-        </style>
-        <script type="text/javascript">
-            if (Latitude != "" && Longitude != "") {
-                document.write("<br \/><div id=\"map-canvas\"><\/div>");
-            }
-        </script>    
-	
-    <!-- map js -->
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo&sensor=false">
-    </script>
-    <script type="text/javascript">
-        function initialize() {
-          var myLatlng = new google.maps.LatLng(Latitude,Longitude);
-          var mapOptions = {
-            zoom: 15,
-            center: myLatlng,
-            panControl: false,
-            scaleControl: false,
-            zoomControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-          var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: Location
-          });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script></div>
+    <div id="Map"></div>
+  </div>
+
+
+
 
 	<div class="large-4 medium-4 columns">
         <!-- suspects -->
@@ -134,38 +100,8 @@
         <div id="cxkg"><a href="http://bridge.caspio.net/dp.asp?AppKey=e76c00003f783d40bde448119f8c">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
     </div>
     <!-- feed -->
-<!--
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-    if (RSS_feed != "") {
-        google.load("feeds", "1");
-        function initialize() {
-          var feed = new google.feeds.Feed(RSS_feed);
-          feed.setNumEntries(10);
-          feed.load(function(result) {
-            if (!result.error) {
-              var container = document.getElementById("feed");
-              for (var i = 0; i < result.feed.entries.length; i++) {
-                var entry = result.feed.entries[i];
-                var li = document.createElement("li");
-                li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
-                container.appendChild(li);
-              }
-            }
-          });
-        }
-        google.setOnLoadCallback(initialize);
-    }
-    
-    if (RSS_feed != "") {
-    document.write("<h4>More coverage on " + victimName + "<\/h4>");
-    document.write("<div id=\"medleycontent\">");
-    document.write("	<ul id=\"feed\">");
-    document.write("	<\/ul>");
-    document.write("<\/div>");
-    }
-    </script>
--->
+    <div id="headlines"></div>
+
     </div>   
 </div>    
 <br clear="both">
@@ -203,7 +139,7 @@
 
 
 <!-- Share Code -->   
-<?php include "../common/share.php"; ?>
+<?php include "share.php"; ?>
 
 <!-- ad Code -->   
 <?php include "advertising.php"; ?>
@@ -217,6 +153,54 @@
   <script>
     $(document).foundation();
   </script>
+
+  <!-- project scripts -->
+<script type="text/javascript"> 
+//BUILD THE MUG PULLING VARS FROM CASPIO
+ var output; 
+ if (victimPhoto_url != "") { 
+   output = "<img class=\"detailmug\" src=\"http:\/\/media.cmgdigital.com\/shared\/lt\/lt_cache\/resize\/300x300" + victimPhoto_url + "\" width=\"300\" height=\"300\" alt=\"" + victimName + "\" \/>"; 
+ } 
+ else { 
+   output = "<img src=\"http:\/\/projects.statesman.com\/homicides\/photo-placeholder.jpg\" width=\"300\" height=\"300\">"; 
+ } 
+ $('#Mug').html(output); 
+
+// gET STATIC MAP PULLING LAT/LONG FROM CASPIO
+var mapOutput;
+  if (Latitude != "") {
+    mapOutput = "<h4>Incident location</h4><h5>" + Location + "</h5><span class=\"show-for-small-only\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=400x250&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span><span class=\"show-for-medium-up\"><img src=\"http:\/\/maps.googleapis.com\/maps\/api\/staticmap?center=" + Latitude + "," + Longitude + "&zoom=14&size=300x200&markers=color:red%7C" + Latitude + "," + Longitude + "&key=AIzaSyA1Kd5RnGhgbKXY58CEpU6KqrFK1DwhACo\" \/><\/span>";
+   $('#Map').html(mapOutput);
+ }
+
+ //FEED TO HEADLINES FROM MELVIL USING NAME FROM CASPIO
+  var myURL = "json/getjson.php?count=5&topic=" + encodeURIComponent(victimName);
+
+  $.getJSON(myURL,buildOutput);
+
+  var feedOutput = '';
+
+  function buildOutput(data) {
+        // TEST IF WORTH DOING
+        if (data.entities.length === 0) {
+          return;
+        }
+        // INIT
+        feedOutput = '<h3>Recent coverage<h3><ul>';
+        
+        // LOOP THROUGH FEED ITEMS
+        for(var i=0;i<data.entities.length;i++) {
+            feedOutput += '<li><a href="'+data.entities[i].canonical_url+'" target="_blank">';
+            feedOutput += data.entities[i].headline;
+            feedOutput += '</a></li>';
+        }
+        feedOutput += '</ul>';
+        $('#headlines').html(feedOutput);
+  }
+
+</script>
+
+
 
 <?php include "metrics-homicides.js";?>
 <?php include "../common/metrics.js";?>

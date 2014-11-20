@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-
+<?php if(session_id() == '' || !isset($_SESSION)) { 
+   // session isn't started 
+   session_start(); 
+} ?>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +43,6 @@
                 <li><a href="./">HOME</a></li>
                 <li><a href="homicide-victim-list.php">VICTIMS</a></li>
 				<li class="active"><a href="homicide-suspect-list.php">SUSPECTS</a></li>
-                <li><a href="homicide-charts.php">STATISTICS</a></li>
                 <li><a href="homicide-map.php">MAP</a></li>
                 <li><a href="homicide-faq.php">ABOUT</a></li>
 			</ul>
