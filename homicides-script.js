@@ -48,10 +48,10 @@ $(function () {
                 series: [{
 					//2013, 2014
                 name: 'Male',
-                data: [22, 8]
+                data: [21, 20]
             }, {
                 name: 'Female',
-                data: [6, 5]
+                data: [6, 9]
             }]
         });
     });
@@ -111,14 +111,15 @@ $(function () {
                 enabled: false
             },
             series: [{
+                //2013, 2014
                 name: 'Hispanic',
-                data: [11, 4]
+                data: [11, 9]
             }, {
                 name: 'White',
-                data: [9, 4]
+                data: [9, 10]
             }, {
                 name: 'Black',
-                data: [8, 3]
+                data: [7, 8]
             }, {
                 name: 'Asian',
                 data: [0, 2]
@@ -152,7 +153,7 @@ $(function () {
                 text: '*Other indicates more than one method'
             },
             xAxis: {
-                categories: ['Shooting', 'Stabbing', 'Blunt force trauma', 'Suffocation', 'Hit and run', '*Other', 'Unknown'],
+                categories: ['Blunt force trauma', 'Hit and run', '*Other', 'Shooting', 'Stabbing', 'Suffocation', 'Unknown'],
                 title: {
                     text: null
                 }
@@ -174,20 +175,27 @@ $(function () {
             plotOptions: {
                 bar: {
                     dataLabels: {
-                        enabled: true
+                        enabled: true,
+                        formatter: function() {
+                            if (this.y != 0) {
+                              return this.y;
+                            } else {
+                              return null;
+                            }
+                        }
                     }
                 }
             },
             credits: {
                 enabled: false
             },
-			//shooting, stabbing, blunt force, suffocation, hit-run, other, unknown
+			//bluntforce, hit-run, other, shooting, stabbing, suffocation, unknown
             series: [{
                 name: '2013',
-                data: [15, 6, 4, 1, 1, 1, 0]
+                data: [/*blunt*/4, /*hit-run*/1, /*other*/1, /*shooting*/14, /*stabbing*/6, /*suffocation*/1, /*unknown*/0]
             },{
-				name: '2014',
-                data: [5,0,0,0,4,0,4]
+                name: '2014',
+                data: [/*blunt*/1, /*hit-run*/4, /*other*/0, /*shooting*/14, /*stabbing*/1, /*suffocation*/1, /*unknown*/8]
             }]
         });
     });
@@ -238,16 +246,23 @@ $(function () {
                     stacking: 'normal',
                     dataLabels: {
                         enabled: true,
-                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        formatter: function() {
+                            if (this.y != 0) {
+                              return this.y;
+                            } else {
+                              return null;
+                            }
+                        }
                     }
                 }
             },
             series: [{
                 name: 'Male',
-                data: [1, 6, 5, 6, 2, 1, 1]
+                data: [/*U20*/1, /*20s*/6, /*30s*/5, /*40s*/5, /*50s*/2, /*60s*/1, /*70s*/1]
             }, {
                 name: 'Female',
-                data: [1, 1, 1, 2, 1]
+                data: [/*U20*/1, /*20s*/1, /*30s*/1, /*40s*/2, /*50s*/1, /*60s*/0, /*70s*/0]
             }]
         });
     });
@@ -297,17 +312,24 @@ $(function () {
                     stacking: 'normal',
                     dataLabels: {
                         enabled: true,
-                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        formatter: function() {
+                            if (this.y != 0) {
+                              return this.y;
+                            } else {
+                              return null;
+                            }
+                        }
                     }
                 }
             },
 			//0-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70+
             series: [{
                 name: 'Male',
-                data: [2, 1, 4, 0, 1]
+                data: [/*U20*/4, /*20s*/4, /*30s*/9, /*40s*/1, /*50s*/1, /*60s*/0, /*70s*/1]
             }, {
                 name: 'Female',
-                data: [0, 4, 0, 1, 0]
+                data: [/*U20*/0, /*20s*/4, /*30s*/0, /*40s*/3, /*50s*/1, /*60s*/0, /*70s*/1]
             }]
         });
     });
@@ -367,10 +389,10 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [0, 3, 2, 4, 0, 2, 5, 0, 4, 2, 2, 4]
+                data: [0, 3, 2, 4, 0, 2, 5, 0, 4, 2, 2, 3]
             },{
                 name: '2014',
-                data: [4, 3, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+                data: [5, 3, 5, 1, 0, 2, 2, 0, 2, 4, 2, 3]
             }]
         });
     });	
@@ -432,10 +454,10 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [3, 1, 5, 5, 3, 7, 4]
+                data: [3, 0, 2, 7, 3, 8, 4]
             },{
                 name: '2014',
-                data: [1, 2, 1, 1, 4, 0, 4]
+                data: [4, 7, 2, 3, 5, 1, 7]
             }]
         });
     });	
