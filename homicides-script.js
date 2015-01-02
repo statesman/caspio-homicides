@@ -132,7 +132,7 @@ $(function () {
 	$(function () {
         $('#methodContainer').highcharts({
             chart: {
-                type: 'bar'
+                type: 'column'
             },
 			colors: [
 			   '#1aadce', 
@@ -323,7 +323,6 @@ $(function () {
                     }
                 }
             },
-			//0-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70+
             series: [{
                 name: 'Male',
                 data: [/*U20*/4, /*20s*/4, /*30s*/9, /*40s*/1, /*50s*/1, /*60s*/0, /*70s*/1]
@@ -488,7 +487,7 @@ $(function () {
               //  text: '*Although police shootings in the line of duty resulted in three homicide cases, the officers involved are not considered suspects in this database unless they are indicted on criminal charges. None of the officers have been indicted.'
             //},
             xAxis: {
-                categories: ['Acquaintance', 'Ex-spouse', 'Family member', 'Police*', 'Significant other', 'Spouse', 'Stranger', 'Unknown'],
+                categories: ['Acquaintance', 'Child', 'Ex-spouse', 'Other', 'Other family', 'Paramour', 'Parent', 'Police*', 'Roommate', 'Sibling', 'Spouse', 'Stranger', 'Unknown'],
                 title: {
                     text: null
                 }
@@ -496,7 +495,7 @@ $(function () {
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Homicides',
+                    text: 'Number of homicides',
                     align: 'high'
                 },
                 labels: {
@@ -519,10 +518,10 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [5, 1, 3, 3, 2, 2, 5, 6]
+                data: [/*Acquaintance*/5, /*Child*/2, /*Ex-spouse*/0, /*Other*/0, /*Other family*/1, /*Paramour*/2, /*Parent*/0, /*Police*/0, /*Roommate*/0, /*Sibling*/0, /*Spouse*/2, /*Stranger*/4, /*Unknown*/0]
             },{
                 name: '2014',
-                data: [2, 0, 0, 0, 0, 0, 4, 7]
+                data: [/*Acquaintance*/3, /*Child*/0, /*Ex-spouse*/0, /*Other*/0, /*Other family*/1, /*Paramour*/2, /*Parent*/0, /*Police*/0, /*Roommate*/0, /*Sibling*/0, /*Spouse*/0, /*Stranger*/8, /*Unknown*/0]
             }]
         });
     });

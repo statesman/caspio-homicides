@@ -62,33 +62,37 @@
 <hr>
 <div class="row">
 	<div class="large-6 columns">
-
-        <dl class="tabs" data-tab>
-			<dd class="active"><a href="#panel2013">2013</a></dd>
-  			<dd><a href="#panel2014">2014</a></dd>
-        </dl>
+    <dl class="tabs" data-tab>
+			<dd><a href="#panel2013">2013</a></dd>
+ 			<dd class="active"><a href="#panel2014">2014</a></dd>
+    </dl>
 		<div class="tabs-content row">
-  			<div class="content active large-12 columns" id="panel2013">
-    			<div id="ageContainer2013" style="height: 320px;"></div>
-			</div>      
-			<div class="content large-12 columns" id="panel2014">
-				<div id="ageContainer2014" style="height: 320px; "min-width: 310px; margin: 0 auto"></div>
-            </div>
-        </div>
-
+  		<div class="content columns" id="panel2013">
+        <!-- the non-active div has problem with width -->
+        <div id="ageContainer2013" style="height: 320px; min-width: 320px;"></div>
+		  </div>      
+		  <div class="content columns active" id="panel2014">
+        <div id="ageContainer2014" style="height: 320px;"></div>
+      </div>
     </div>
+  </div>
 	<div class="large-6 columns">
-		<div id="methodContainer" style="height: 385px;"></div>
-    </div>
+		<div id="dayContainer" style="height: 385px;"></div>
+  </div>
 </div>
 <hr>
+
 <div class="row">
-	<div class="large-4 columns">
-		<div id="dayContainer" style="height: 320px;"></div>
-    </div>
-	<div class="large-8 columns">
+	<div class="large-12 columns">
 		<div id="monthContainer" style="height: 320px;"></div>
-    </div>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div id="methodContainer" style="height: 320px;"></div>
+  </div>
 </div>
 <hr>
 <div class="row">
