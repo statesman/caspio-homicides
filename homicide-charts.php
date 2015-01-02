@@ -51,7 +51,7 @@
 
 <div class="row">
 	<h1>Austin Homicide Project data</h1>
-    <p>Data includes homicides in Travis County and the city of Austin.</p>
+    <p>Data for homicides only in city of Austin.</p>
 	<div class="large-6 columns">
 		<div id="genderContainer" style="height: 320px;"></div>
     </div>

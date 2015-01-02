@@ -754,7 +754,7 @@ $(function () {
                 text: 'Victim-suspect relationship'
             },
             xAxis: {
-                categories: ['2008', '2009', '2010', '2011', '2012'],
+                categories: ['2008', '2009', '2010', '2011', '2012', '2013'],
                 title: {
                     text: null
                 }
@@ -785,23 +785,23 @@ $(function () {
         	},
             series: [{
                 name: 'Acquaintance',
-                data: [39, 36, 29, 59, 31],
+                data: [39, 36, 29, 59, 31, 35],
 				
             }, {
                 name: 'Family/Significant Other',
-                data: [22, 5, 26, 19, 24],
+                data: [22, 5, 26, 19, 24, 30],
 				
             }, {
                 name: 'Stranger',
-                data: [26, 50, 34, 15, 36],
+                data: [26, 50, 34, 15, 36, 23],
 				
             }, {
                 name: 'Roommate',
-                data: [0, 0, 5, 0, 3],
+                data: [0, 0, 5, 0, 3, 0],
 				
             }, {
                 name: 'Undetermined',
-                data: [13, 9, 6, 7, 6],
+                data: [13, 9, 6, 7, 6, 12],
 				
             }]
         });
