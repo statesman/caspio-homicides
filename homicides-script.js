@@ -487,7 +487,7 @@ $(function () {
               //  text: '*Although police shootings in the line of duty resulted in three homicide cases, the officers involved are not considered suspects in this database unless they are indicted on criminal charges. None of the officers have been indicted.'
             //},
             xAxis: {
-                categories: ['Acquaintance', 'Child', 'Ex-spouse', 'Other', 'Other family', 'Paramour', 'Parent', 'Police*', 'Roommate', 'Sibling', 'Spouse', 'Stranger', 'Unknown'],
+                categories: ['Acquaintance', 'Boyfriend', 'Brother', 'Daughter', 'Father', 'Friend', 'Girlfriend', 'Husband', 'Mother', 'Other family', 'Police*', 'Sister', 'Son', 'Stranger', 'Unknown', 'Wife'],
                 title: {
                     text: null
                 }
@@ -518,10 +518,10 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [/*Acquaintance*/5, /*Child*/2, /*Ex-spouse*/0, /*Other*/0, /*Other family*/1, /*Paramour*/2, /*Parent*/0, /*Police*/0, /*Roommate*/0, /*Sibling*/0, /*Spouse*/2, /*Stranger*/4, /*Unknown*/0]
+                data: [/*Acquaintance*/5, /*Boyfriend*/0, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/0, /*Girlfriend*/1, /*Husband*/2, /*Mother*/0, /*Other family*/1, /*Police*/0, /*Sister*/0, /*Son*/2, /*Stranger*/4, /*Unknown*/0, /*Wife*/0]
             },{
                 name: '2014',
-                data: [/*Acquaintance*/3, /*Child*/0, /*Ex-spouse*/0, /*Other*/0, /*Other family*/1, /*Paramour*/2, /*Parent*/0, /*Police*/0, /*Roommate*/0, /*Sibling*/0, /*Spouse*/0, /*Stranger*/8, /*Unknown*/0]
+                data: [/*Acquaintance*/2, /*Boyfriend*/2, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/1, /*Girlfriend*/0, /*Husband*/0, /*Mother*/0, /*Other family*/1, /*Police*/0, /*Sister*/0, /*Son*/0, /*Stranger*/8, /*Unknown*/0, /*Wife*/0]
             }]
         });
     });
