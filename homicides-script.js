@@ -7,8 +7,8 @@ $(function () {
                 type: 'bar'
             },
 			colors: [
-			   '#1aadce', 
-			   '#0d233a' 
+			   '#1aadce',
+			   '#0d233a'
 			],
 			credits: {
             enabled: false
@@ -48,14 +48,14 @@ $(function () {
                 series: [{
 					//2013, 2014
                 name: 'Male',
-                data: [21, 25]
+                data: [22, 25]
             }, {
                 name: 'Female',
                 data: [6, 11]
             }]
         });
     });
-	
+
 	//RACE ETHNICITY CHART
 	$(function () {
         $('#raceContainer').highcharts({
@@ -74,8 +74,8 @@ $(function () {
 			   '#c42525',
 			   '#910000',
 			   '#2f7ed8',
-			   '#0d233a',//black 
-			   '#77a1e5',//lt blue	
+			   '#0d233a',//black
+			   '#77a1e5',//lt blue
 
 			],
            // subtitle: {
@@ -116,18 +116,18 @@ $(function () {
                 data: [11, 11]
             }, {
                 name: 'White',
-                data: [9, 14]
+                data: [9, 15]
             }, {
                 name: 'Black',
-                data: [7, 9]
+                data: [8, 8]
             }, {
                 name: 'Asian',
                 data: [0, 2]
             }]
         });
     });
-	
-	
+
+
 		//METHOD CHART
 	$(function () {
         $('#methodContainer').highcharts({
@@ -135,15 +135,15 @@ $(function () {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
-			   '#0d233a', 
-			   '#8bbc21', 
-			   '#910000', 
-			   '#2f7ed8', 
+			   '#1aadce',
+			   '#0d233a',
+			   '#8bbc21',
+			   '#910000',
+			   '#2f7ed8',
 			   '#492970',
-			   '#f28f43', 
-			   '#77a1e5', 
-			   '#c42525', 
+			   '#f28f43',
+			   '#77a1e5',
+			   '#c42525',
 			   '#a6c96a'
 			],
             title: {
@@ -192,23 +192,23 @@ $(function () {
 			//bluntforce, hit-run, other, shooting, stabbing, suffocation, unknown
             series: [{
                 name: '2013',
-                data: [/*blunt*/4, /*hit-run*/1, /*other*/1, /*shooting*/14, /*stabbing*/6, /*suffocation*/1, /*unknown*/0]
+                data: [/*blunt*/4, /*hit-run*/1, /*other*/1, /*shooting*/15, /*stabbing*/6, /*suffocation*/1, /*unknown*/0]
             },{
                 name: '2014',
-                data: [/*blunt*/2, /*hit-run*/0, /*other*/0, /*shooting*/14, /*stabbing*/3, /*suffocation*/1, /*unknown*/11]
+                data: [/*blunt*/2, /*hit-run*/4, /*other*/0, /*shooting*/14, /*stabbing*/3, /*suffocation*/1, /*unknown*/11]
             }]
         });
     });
 
 
-// 2013 age chart	
+// 2013 age chart
 $(function () {
         $('#ageContainer2013').highcharts({
             chart: {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
+			   '#1aadce',
 			   '#0d233a'
 			],
             title: {
@@ -259,22 +259,22 @@ $(function () {
             },
             series: [{
                 name: 'Male',
-                data: [/*U20*/1, /*20s*/6, /*30s*/5, /*40s*/5, /*50s*/2, /*60s*/1, /*70s*/1]
+                data: [/*U20*/1, /*20s*/6, /*30s*/5, /*40s*/6, /*50s*/2, /*60s*/1, /*70s*/1]
             }, {
                 name: 'Female',
                 data: [/*U20*/1, /*20s*/1, /*30s*/1, /*40s*/2, /*50s*/1, /*60s*/0, /*70s*/0]
             }]
         });
     });
-	
-	// 2014 age chart	
+
+	// 2014 age chart
 $(function () {
         $('#ageContainer2014').highcharts({
             chart: {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
+			   '#1aadce',
 			   '#0d233a'
 			],
             title: {
@@ -332,24 +332,24 @@ $(function () {
             }]
         });
     });
-	
-	
-// month chart	
+
+
+// month chart
 $(function () {
         $('#monthContainer').highcharts({
             chart: {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
-			   '#0d233a', 
-			   '#8bbc21', 
-			   '#910000', 
-			   '#2f7ed8', 
+			   '#1aadce',
+			   '#0d233a',
+			   '#8bbc21',
+			   '#910000',
+			   '#2f7ed8',
 			   '#492970',
-			   '#f28f43', 
-			   '#77a1e5', 
-			   '#c42525', 
+			   '#f28f43',
+			   '#77a1e5',
+			   '#c42525',
 			   '#a6c96a'
 			],
             title: {
@@ -388,30 +388,30 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [0, 3, 2, 4, 0, 2, 5, 0, 4, 2, 2, 3]
+                data: [0, 3, 2, 4, 0, 2, 5, 0, 4, 2, 2, 4]
             },{
                 name: '2014',
-                data: [4, 3, 5, 1, 0, 2, 3, 1, 3, 4, 5, 5]
+                data: [3, 3, 5, 1, 0, 2, 3, 1, 3, 4, 6, 5]
             }]
         });
-    });	
-	
-// day chart	
+    });
+
+// day chart
 $(function () {
         $('#dayContainer').highcharts({
             chart: {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
-			   '#0d233a', 
-			   '#8bbc21', 
-			   '#910000', 
-			   '#2f7ed8', 
+			   '#1aadce',
+			   '#0d233a',
+			   '#8bbc21',
+			   '#910000',
+			   '#2f7ed8',
 			   '#492970',
-			   '#f28f43', 
-			   '#77a1e5', 
-			   '#c42525', 
+			   '#f28f43',
+			   '#77a1e5',
+			   '#c42525',
 			   '#a6c96a'
 			],
             title: {
@@ -453,13 +453,13 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [3, 0, 2, 7, 3, 8, 4]
+                data: [3, 1, 5, 5, 3, 7, 4]
             },{
                 name: '2014',
-                data: [4, 9, 2, 6, 7, 1, 7]
+                data: [4, 8, 4, 2, 8, 2, 8]
             }]
         });
-    });	
+    });
 
 
 		//RELATIONSHIP CHART
@@ -469,15 +469,15 @@ $(function () {
                 type: 'column'
             },
 			colors: [
-			   '#1aadce', 
-			   '#0d233a', 
-			   '#8bbc21', 
-			   '#910000', 
-			   '#2f7ed8', 
+			   '#1aadce',
+			   '#0d233a',
+			   '#8bbc21',
+			   '#910000',
+			   '#2f7ed8',
 			   '#492970',
-			   '#f28f43', 
-			   '#77a1e5', 
-			   '#c42525', 
+			   '#f28f43',
+			   '#77a1e5',
+			   '#c42525',
 			   '#a6c96a'
 			],
             title: {
@@ -502,7 +502,7 @@ $(function () {
                     overflow: 'justify'
                 }
             },
-			 
+
             tooltip: {
                 valueSuffix: ' deaths'
             },
@@ -518,19 +518,19 @@ $(function () {
             },
             series: [{
                 name: '2013',
-                data: [/*Acquaintance*/5, /*Boyfriend*/0, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/0, /*Girlfriend*/1, /*Husband*/2, /*Mother*/0, /*Other family*/1, /*Police*/0, /*Sister*/0, /*Son*/2, /*Stranger*/4, /*Unknown*/0, /*Wife*/0]
+                data: [/*Acquaintance*/5, /*Boyfriend*/0, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/0, /*Girlfriend*/1, /*Husband*/2, /*Mother*/0, /*Other family*/1, /*Police*/1, /*Sister*/0, /*Son*/2, /*Stranger*/5, /*Unknown*/0, /*Wife*/0]
             },{
                 name: '2014',
-                data: [/*Acquaintance*/5, /*Boyfriend*/2, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/2, /*Girlfriend*/0, /*Husband*/0, /*Mother*/1, /*Other family*/4, /*Police*/0, /*Sister*/0, /*Son*/0, /*Stranger*/8, /*Unknown*/2, /*Wife*/0]
+                data: [/*Acquaintance*/5, /*Boyfriend*/2, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/2, /*Girlfriend*/0, /*Husband*/0, /*Mother*/1, /*Other family*/4, /*Police*/0, /*Sister*/0, /*Son*/0, /*Stranger*/4, /*Unknown*/2, /*Wife*/0]
             }]
         });
     });
-	
-	
-	
-	
-	
-		
+
+
+
+
+
+
 //murder container
 $(function () {
         $('#murderGenderContainer').highcharts({
@@ -581,8 +581,8 @@ $(function () {
             },]
         });
     });
-	
-	
+
+
 	//RACE ETHNICITY CHART
 	$(function () {
         $('#murderRaceContainer').highcharts({
@@ -590,15 +590,15 @@ $(function () {
                 type: 'column'
             },
 			colors: [
-   '#2f7ed8', 
-   '#0d233a', 
-   '#8bbc21', 
-   '#910000', 
-   '#1aadce', 
+   '#2f7ed8',
+   '#0d233a',
+   '#8bbc21',
+   '#910000',
+   '#1aadce',
    '#492970',
-   '#f28f43', 
-   '#77a1e5', 
-   '#c42525', 
+   '#f28f43',
+   '#77a1e5',
+   '#c42525',
    '#a6c96a'
 ],
             title: {
@@ -657,24 +657,24 @@ $(function () {
             }]
         });
     });
-	
 
-	// month chart	
+
+	// month chart
 	$(function () {
         $('#murderMonthContainer').highcharts({
             chart: {
                 type: 'areaspline'
             },
 			colors: [
-   '#2f7ed8', 
-   '#0d233a', 
-   '#8bbc21', 
-   '#910000', 
-   '#1aadce', 
+   '#2f7ed8',
+   '#0d233a',
+   '#8bbc21',
+   '#910000',
+   '#1aadce',
    '#492970',
-   '#f28f43', 
-   '#77a1e5', 
-   '#c42525', 
+   '#f28f43',
+   '#77a1e5',
+   '#c42525',
    '#a6c96a'
 ],
             title: {
@@ -708,7 +708,7 @@ $(function () {
 				areaspline: {
                     fillOpacity: 0.5
                 }
-            },			
+            },
             credits: {
                 enabled: false
             },
@@ -730,24 +730,24 @@ $(function () {
             }]
         });
     });
-	
-	// relationship chart	
+
+	// relationship chart
 	$(function () {
         $('#murderRelContainer').highcharts({
             chart: {
                 type: 'bar'
             },
 			colors: [
-   '#2f7ed8', 
-   '#0d233a', 
-   '#8bbc21', 
+   '#2f7ed8',
+   '#0d233a',
+   '#8bbc21',
    '#910000',
-   '#492970', 
-   '#1aadce', 
-   
-   '#f28f43', 
-   '#77a1e5', 
-   '#c42525', 
+   '#492970',
+   '#1aadce',
+
+   '#f28f43',
+   '#77a1e5',
+   '#c42525',
    '#a6c96a'
 ],
             title: {
@@ -781,29 +781,28 @@ $(function () {
                 enabled: false
             },
 			legend: {
-            reversed: true        
+            reversed: true
         	},
             series: [{
                 name: 'Acquaintance',
                 data: [39, 36, 29, 59, 31, 35],
-				
+
             }, {
                 name: 'Family/Significant Other',
                 data: [22, 5, 26, 19, 24, 30],
-				
+
             }, {
                 name: 'Stranger',
                 data: [26, 50, 34, 15, 36, 23],
-				
+
             }, {
                 name: 'Roommate',
                 data: [0, 0, 5, 0, 3, 0],
-				
+
             }, {
                 name: 'Undetermined',
                 data: [13, 9, 6, 7, 6, 12],
-				
+
             }]
         });
     });
-	

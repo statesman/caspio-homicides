@@ -70,7 +70,7 @@
   		<div class="content columns" id="panel2013">
         <!-- the non-active div has problem with width -->
         <div id="ageContainer2013" style="height: 320px; min-width: 320px;"></div>
-		  </div>      
+		  </div>
 		  <div class="content columns active" id="panel2014">
         <div id="ageContainer2014" style="height: 320px;"></div>
       </div>
@@ -98,7 +98,7 @@
 <div class="row">
 	<div class="large-12 columns">
 		<div id="relationshipContainer" style="height: 270px;"></div>
-        <p style="font-size:12px">*Although police shootings in the line of duty resulted in three homicides, the officers involved are not considered suspects in this database unless they are indicted on criminal charges. None of the officers have been indicted.</p>
+        <p style="font-size:12px">*Although some police shootings in the line of duty resulted in homicides, the officers involved are not considered suspects in this database unless they are indicted on criminal charges.</p>
     </div>
 </div>
 <hr>
@@ -112,7 +112,7 @@
     </div>
     <div class="large-6 columns">
 		<div id="murderRaceContainer" style="height: 320px;"></div>
-    </div>  
+    </div>
 </div>
 <div class="row">
     <div class="large-12 columns">
@@ -126,7 +126,7 @@
 </div>
 
 <hr />
-<!-- Ad Code -->   
+<!-- Ad Code -->
 <?php include "advertising.php"; ?>
 <!-- End Ad Code -->
 
@@ -135,7 +135,7 @@
   <script>
     $(document).foundation();
   </script>
-  
+
     <!-- highcharts -->
 	<script src="http://alt.coxnewsweb.com/statesman/special/js/highcharts.js" type="text/javascript"></script>
     <script src="http://alt.coxnewsweb.com/statesman/special/js/modules/exporting.js"></script>

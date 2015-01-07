@@ -61,10 +61,10 @@
       				<dd>The Austin Homicide Project is an effort by the American-Statesman to document homicides in Austin and Central Texas, and to provide a database of information about the cases so the community can stay informed. This database is currently tracking all homicides starting in 2013, including justifiable homicides and cases classified as murders by the Austin Police Department. Not included are deaths such as suicides or traffic fatalities, which the Travis County medical examiner's office generally classifies as "accidents." Over time, the project will expand to include jurisdictions outside of Austin and prior years</dd>
     			</dt>
   			</dl>
-                
+
   			<dl>
-    			<dt>What is a "homicide"?</dt>      
-        			<dd>A homicide happens when one human causes the death of another human and it is one of the five categories the Travis County medical examiner's office uses to explain the circumstances surrounding how someone died. The other four "manners of death" are "natural," "accident," "suicide" and "undetermined."</dd> 
+    			<dt>What is a "homicide"?</dt>
+        			<dd>A homicide happens when one human causes the death of another human and it is one of the five categories the Travis County medical examiner's office uses to explain the circumstances surrounding how someone died. The other four "manners of death" are "natural," "accident," "suicide" and "undetermined."</dd>
         			<dd>Not all homicides are murder. In 2012, for example, the medical examiner's office determined that 38 of the more than 1,000 deaths that doctors investigated that year were homicides, including the deaths of people killed in officer-involved shootings. However, the Austin Police Department only classified 33 of all homicides in the city that year as murders.</dd>
               <dd>A murder is a criminal homicide that a person commits under <a href="http://www.statutes.legis.state.tx.us/Docs/PE/htm/PE.19.htm" target="_blank">the state's penal code</a> if he or she intentionally or knowingly causes the death of an individual; if he or she intends to cause serious bodily injury and commits an act clearly dangerous to human life that causes the death of an individual; or if he or she commits or attempts to commit a felony, other than manslaughter, and in the course of doing so causes the death of an individual.</dd>
     			</dt>
@@ -81,7 +81,7 @@
             <dd>The total number of homicides is also subject to change as the medical examiner makes rulings in deaths from prior years.</dd>
             <dd>This database will be updated with homicides not already included as we learn enough information about the cases.</dd>
     			</dt>
-  			</dl>            
+  			</dl>
   			<dl>
     			<dt>How can I contact the reporters and editors who work on the Austin Homicide Project?</dt>
     				<dd>Reporters and editors of this project can be emailed at <a href="mailto:homicides@statesman.com">homicides@statesman.com</a>.</dd>
@@ -94,7 +94,7 @@
   			</dl>
 	</div>
     <div class="large-4 medium-4 columns">
-        <h3>Helpful links</h3>  
+        <h3>Helpful links</h3>
         <b>Austin Police Department</b>
         	<ul class="square">
         	<li><a href="http://austintexas.gov/page/annual-crime-traffic-reports" target="_blank">Annual crime and traffic reports</a></li>
@@ -115,16 +115,16 @@
         <b>State of Texas</b>
             <li><a href="http://www.tdcj.state.tx.us/info_victims.html" target="_blank">Texas Department of Criminal Justice information for victims</a></li>
         </ul>
-        
+
         <div class="panel">
         	<h3>Austin Homicide Project</h3>
             <dl>
-            <dt>Contact us</dt>           	
+            <dt>Contact us</dt>
   				<dd>You can email Statesman staff contributors to this project at <a href="mailto:homicides@statesman.com">homicides@statesman.com</a>.</dd>
                 <dt>Staff</dt>
-  				<dd>Reporters: <a href="mailto:jchang@statesman.com">Julie Chang</a>, <a href="mailto:corourke@statesman.com">Ciara O'Rourke</a> and <a href="mailto:julloa@statesman.com">Jazmine Ulloa</a><br>
-				Editor: <a href="mailto:tlabinski@statesman.com">Tom Labinski</a><br>
-				Database team: <a href="mailto:cmcdonald@statesman.com">Christian McDonald</a> and <a href="mailto:rvillalpando@statesman.com">Roberto Villalpando</a></dd>
+  				<dd>Reporters: <a href="mailto:corourke@statesman.com">Ciara O'Rourke</a> and <a href="mailto:julloa@statesman.com">Jazmine Ulloa</a><br>
+				Editor: <a href="mailto:rvillalpando@statesman.com">Roberto Villalpando</a><br>
+				Database: <a href="mailto:cmcdonald@statesman.com">Christian McDonald</a></dd>
 			</dl>
         </div>
 	</div>
@@ -132,7 +132,7 @@
 <hr />
 
 
-<!-- Ad Code -->   
+<!-- Ad Code -->
 <?php include "advertising.php"; ?>
 <!-- End Ad Code -->
 
