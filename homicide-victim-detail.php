@@ -43,6 +43,7 @@
                 <li><a href="./">HOME</a></li>
                 <li class="active"><a href="homicide-victim-list.php">VICTIMS</a></li>
 			         	<li><a href="homicide-suspect-list.php">SUSPECTS</a></li>
+                <li><a href="homicide-charts.php">STATISTICS</a></li>
                 <li><a href="homicide-map.php">MAP</a></li>
                 <li><a href="homicide-faq.php">ABOUT</a></li>
 			</ul>

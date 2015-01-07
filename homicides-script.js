@@ -48,10 +48,10 @@ $(function () {
                 series: [{
 					//2013, 2014
                 name: 'Male',
-                data: [21, 20]
+                data: [21, 25]
             }, {
                 name: 'Female',
-                data: [6, 9]
+                data: [6, 11]
             }]
         });
     });
@@ -113,13 +113,13 @@ $(function () {
             series: [{
                 //2013, 2014
                 name: 'Hispanic',
-                data: [11, 9]
+                data: [11, 11]
             }, {
                 name: 'White',
-                data: [9, 10]
+                data: [9, 14]
             }, {
                 name: 'Black',
-                data: [7, 8]
+                data: [7, 9]
             }, {
                 name: 'Asian',
                 data: [0, 2]
@@ -195,7 +195,7 @@ $(function () {
                 data: [/*blunt*/4, /*hit-run*/1, /*other*/1, /*shooting*/14, /*stabbing*/6, /*suffocation*/1, /*unknown*/0]
             },{
                 name: '2014',
-                data: [/*blunt*/1, /*hit-run*/4, /*other*/0, /*shooting*/14, /*stabbing*/1, /*suffocation*/1, /*unknown*/8]
+                data: [/*blunt*/2, /*hit-run*/0, /*other*/0, /*shooting*/14, /*stabbing*/3, /*suffocation*/1, /*unknown*/11]
             }]
         });
     });
@@ -325,10 +325,10 @@ $(function () {
             },
             series: [{
                 name: 'Male',
-                data: [/*U20*/4, /*20s*/4, /*30s*/9, /*40s*/1, /*50s*/1, /*60s*/0, /*70s*/1]
+                data: [/*U20*/5, /*20s*/7, /*30s*/8, /*40s*/2, /*50s*/2, /*60s*/0, /*70s*/1]
             }, {
                 name: 'Female',
-                data: [/*U20*/0, /*20s*/4, /*30s*/0, /*40s*/3, /*50s*/1, /*60s*/0, /*70s*/1]
+                data: [/*U20*/0, /*20s*/4, /*30s*/0, /*40s*/3, /*50s*/2, /*60s*/1, /*70s*/1]
             }]
         });
     });
@@ -391,7 +391,7 @@ $(function () {
                 data: [0, 3, 2, 4, 0, 2, 5, 0, 4, 2, 2, 3]
             },{
                 name: '2014',
-                data: [5, 3, 5, 1, 0, 2, 2, 0, 2, 4, 2, 3]
+                data: [4, 3, 5, 1, 0, 2, 3, 1, 3, 4, 5, 5]
             }]
         });
     });	
@@ -456,7 +456,7 @@ $(function () {
                 data: [3, 0, 2, 7, 3, 8, 4]
             },{
                 name: '2014',
-                data: [4, 7, 2, 3, 5, 1, 7]
+                data: [4, 9, 2, 6, 7, 1, 7]
             }]
         });
     });	
@@ -521,7 +521,7 @@ $(function () {
                 data: [/*Acquaintance*/5, /*Boyfriend*/0, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/0, /*Girlfriend*/1, /*Husband*/2, /*Mother*/0, /*Other family*/1, /*Police*/0, /*Sister*/0, /*Son*/2, /*Stranger*/4, /*Unknown*/0, /*Wife*/0]
             },{
                 name: '2014',
-                data: [/*Acquaintance*/2, /*Boyfriend*/2, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/1, /*Girlfriend*/0, /*Husband*/0, /*Mother*/0, /*Other family*/1, /*Police*/0, /*Sister*/0, /*Son*/0, /*Stranger*/8, /*Unknown*/0, /*Wife*/0]
+                data: [/*Acquaintance*/5, /*Boyfriend*/2, /*Brother*/0, /*Daughter*/0, /*Father*/0, /*Friend*/2, /*Girlfriend*/0, /*Husband*/0, /*Mother*/1, /*Other family*/4, /*Police*/0, /*Sister*/0, /*Son*/0, /*Stranger*/8, /*Unknown*/2, /*Wife*/0]
             }]
         });
     });
