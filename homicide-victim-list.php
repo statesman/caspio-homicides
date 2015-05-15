@@ -67,9 +67,10 @@
 		<div id="cxkg"><a href="http://bridge.caspio.net/dp.asp?AppKey=e76c0000258b2a34a75b44d7b208">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
 		</div>
 		<div class="show-for-medium-up">
-		<!-- Begin Caspio Deploy Code (for inserting in body) -->
-		<?php require_once('dpload.txt');dpload('http://bridge.caspio.net/','e76c0000b1df3326c230476fb542','i');?>
-		<!-- End Caspio Deploy Code -->
+			<div id="cbe76c0000b1df3326c230476fb542"></div>
+			<script type="text/javascript" src="http://b1.caspio.com/scripts/e1.js"></script>
+			<script type="text/javascript">try{f_cbload("e76c0000b1df3326c230476fb542","http:");}catch(v_e){;}</script>
+			<div id="cxkg"><a href="http://b1.caspio.com/dp.asp?AppKey=e76c0000b1df3326c230476fb542">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
 		</div>
 	</div>
 
